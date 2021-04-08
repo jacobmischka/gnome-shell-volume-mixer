@@ -70,13 +70,17 @@ var Indicator = GObject.registerClass(class Indicator extends PanelMenu.SystemIn
     }
 
     updateOutputIcon() {
-        let icon = this._volumeMenu.getOutputIcon();
+        try {
+            let icon = this._volumeMenu.getOutputIcon();
 
-        if (icon) {
-            this.show();
-            this._primaryIndicator.icon_name = icon;
-            this._primaryIndicator.visible = true;
-        } else {
+            if (icon) {
+                this.show();
+                this._primaryIndicator.icon_name = icon;
+                this._primaryIndicator.visible = true;
+            } else {
+                throw Error('No icon');
+            }
+        } catch (err) {
             this.hide();
             this._primaryIndicator.visible = false;
         }
