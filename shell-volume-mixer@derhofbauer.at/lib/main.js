@@ -131,8 +131,8 @@ var Extension = class {
      */
     _hideOriginal() {
         this._orgVolume._volumeMenu.actor.hide();
-        this._orgVolume._primaryIndicator.hide();
-        this._menu._indicators.remove_child(this._orgVolume);
+        // this._orgVolume._primaryIndicator.hide();
+        // this._menu._indicators.remove_child(this._orgVolume);
     }
 
     /**
@@ -140,9 +140,9 @@ var Extension = class {
      * @private
      */
     _showOriginal() {
-        this._menu._indicators.insert_child_at_index(this._orgVolume, this._indicatorPos || DEFAULT_INDICATOR_POS);
+        // this._menu._indicators.insert_child_at_index(this._orgVolume, this._indicatorPos || DEFAULT_INDICATOR_POS);
         this._orgVolume._volumeMenu.actor.show();
-        this._orgVolume._primaryIndicator.show();
+        // this._orgVolume._primaryIndicator.show();
     }
 
     /**
@@ -160,8 +160,8 @@ var Extension = class {
         this._hideOriginal();
 
         // add our own indicator and menu
-        this._menu._volume = this._indicator;
-        this._menu._indicators.insert_child_at_index(this._indicator, this._indicatorPos);
+        // this._menu._volume = this._indicator;
+        // this._menu._indicators.insert_child_at_index(this._indicator, this._indicatorPos);
         this._menu.menu.addMenuItem(this._indicator.menu, 0);
 
         this._menu.menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem(), 1);

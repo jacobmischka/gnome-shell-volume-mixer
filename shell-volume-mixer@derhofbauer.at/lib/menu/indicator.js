@@ -37,7 +37,7 @@ var Indicator = GObject.registerClass(class Indicator extends PanelMenu.SystemIn
 
         this._volumeMenu = new Menu(mixer, options);
         this._volumeMenu.actor.add_style_class_name('svm-integrated-menu');
-        this._volumeMenu.connect('output-icon-changed', this.updateOutputIcon.bind(this));
+        // this._volumeMenu.connect('output-icon-changed', this.updateOutputIcon.bind(this));
 
         if (options.showPercentageLabel) {
             this._percentageLabel = new PercentageLabel(mixer);
