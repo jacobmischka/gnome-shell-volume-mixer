@@ -242,8 +242,8 @@ var Mixer = class
         }
 
         const cardDescription = paCard.description;
-        const profileDescription = paCard.profiles[next.profile];
-        this._showNotification(`${cardDescription}\n${profileDescription}`);
+        const profile = paCard.profiles[next.profile];
+        this._showNotification(`${cardDescription}\n${profile.description}`);
     }
 
     /**
